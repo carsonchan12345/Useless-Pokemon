@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IERG3080_part2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Background="AntiqueWhite"
+        Title="MainWindow" Height="480" Width="800">
     <Grid>
-
-    </Canvas>
+        <Button Content="Start" HorizontalAlignment="Center" VerticalAlignment="Top" Height="69" Width="162" FontSize="40" Margin="0,261,0,0" Click="StartButton_Click"/>
+        <Button Content="End" HorizontalAlignment="Center" VerticalAlignment="Top" Height="69" Width="162" FontSize="40" Margin="0,355,0,0" Click="EndButton_Click"/>
+        <DockPanel>
+            <Frame x:Name="_NavigationFrame" NavigationUIVisibility="Hidden" />
+        </DockPanel>
+    </Grid>
 </Window>
