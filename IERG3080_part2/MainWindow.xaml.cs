@@ -40,6 +40,7 @@ namespace IERG3080_part2
 
         public MainWindow()
         {
+            Console.Write("testing");
             InitializeComponent();
 
             GameSetUp(); // run the game set up function
