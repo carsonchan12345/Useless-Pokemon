@@ -24,6 +24,9 @@ namespace IERG3080_part2
         {
             InitializeComponent();
             Console.WriteLine("Hllo");
+            Console.WriteLine("Hllo");
+            Console.WriteLine("Hllo");
+            Console.WriteLine("Hllo");
         }
     }
 }
