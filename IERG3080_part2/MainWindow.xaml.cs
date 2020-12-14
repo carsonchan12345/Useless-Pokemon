@@ -23,6 +23,7 @@ namespace IERG3080_part2
         public MainWindow()
         {
             InitializeComponent();
+            Console.WriteLine("Hllo");
         }
     }
 }
