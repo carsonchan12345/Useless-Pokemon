@@ -1,0 +1,37 @@
+[
+    {
+        "name":"Bulbasaur",
+        "hp": 10,
+        "attack": 5,
+        "evolvelv": 2,
+        "evolve":"Ivysaur"
+    },
+    {
+        "name":"Ivysaur",
+        "hp": 15,
+        "attack": 7,
+        "evolvelv":null,
+        "evolve": null
+    },
+    {
+        "name":"Charmander",
+        "hp": 8,
+        "attack": 6,
+        "evolvelv":2,
+        "evolve": "Charmeleon"
+    },
+    {
+        "name":"Charmeleon",
+        "hp": 11,
+        "attack": 9,
+        "evolvelv":null,
+        "evolve": null
+    },
+    {
+        "name":"Pikachu",
+        "hp":8,
+        "attack":6,
+        "evolvelv":null,
+        "evolve": null
+    }
+]
