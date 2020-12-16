@@ -32,7 +32,8 @@ namespace IERG3080_part2
         {
 
             _NavigationFrame.NavigationService.Navigate(new Uri("Navigation.xaml", UriKind.Relative));
-
+            Pokemon x =new Pokemon(5);
+            MessageBox.Show(x.Price.ToString());
         }
 
         private void EndButton_Click(object sender, RoutedEventArgs e)

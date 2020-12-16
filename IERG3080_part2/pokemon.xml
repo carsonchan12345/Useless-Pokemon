@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pokemon>
+	<Pokemon Id="1" Name="Bulbasaur" Hp="10" Attack="5" EvolveLv="20" Evolve="Ivysaur" Lv= "5" Cp="77" Skill1="Comet Punch" Skill2="Rage" Skill3="null" Skill4="null" Price="100"></Pokemon>
+	<Pokemon Id="2" Name="Ivysaur" Hp="15" Attack="7" EvolveLv="-1" Evolve="null" Lv= "10" Cp="107" Skill1="Comet Punch" Skill2="null" Skill3="null" Skill4="null" Price="150"></Pokemon>
+	<Pokemon Id="3" Name="Charmander" Hp="8" Attack="6" EvolveLv="20" Evolve="Charmeleon" Cp="66" Lv= "5" Skill1="Triple Kick" Skill2="null" Skill3="null" Skill4="null" Price="100"></Pokemon>
+	<Pokemon Id="4" Name="Charmeleon" Hp="11" Attack="9" EvolveLv="-1" Evolve="null" Lv= "10" Cp="102" Skill1="Triple Kick" Skill2="null" Skill3="null" Skill4="null" Price="150"></Pokemon>
+	<Pokemon Id="5" Name="Pikachu" Hp="8" Attack="6" EvolveLv="-1" Evolve="null" Lv= "5" Cp="99" Skill1="10,000,000 Volt Thunderbolt" Skill2="null" Skill3="null" Skill4="null" Price="300"></Pokemon>
+</Pokemon>
