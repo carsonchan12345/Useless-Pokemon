@@ -64,7 +64,7 @@ namespace IERG3080_part2
         }
         public Pokemon(int ID)
         {           
-            XmlReader reader = XmlReader.Create("C:\\Users\\ths019\\Desktop\\IERG3080_part2\\IERG3080_part2\\pokemon.xml");
+            XmlReader reader = XmlReader.Create("../../../data/pokemon.xml");
             while (reader.Read())
             {
                 if(reader.Name=="Pokemon"&&reader.NodeType == XmlNodeType.Element)

@@ -7,10 +7,15 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Background="Beige"
-      Title="MainMap">
-
-    <Grid>
-        <Button Content="I am Main Map" HorizontalAlignment="Center" Height="108" Margin="0,166,0,0" VerticalAlignment="Top" Width="246"/>
-
-    </Grid>
+      Title="MainMap"
+      >
+    <Canvas x:Name="MyCanvas" KeyDown="User_KeyDown" HorizontalAlignment="Right" Margin="0,-579,-510,-433" Width="2047" RenderTransformOrigin="0.514,0.537">
+        <Canvas x:Name="Map" Height="1054" Canvas.Left="238" Canvas.Top="262" Width="1600" RenderTransformOrigin="0.489,0.546">
+            <Canvas.Background>
+                <ImageBrush ImageSource="map.png"/>
+            </Canvas.Background>
+            <Rectangle Name="user" Width="30" Height="30" Fill="Yellow" Canvas.Left="800" Canvas.Top="612" />
+            <Button Content="Button" Canvas.Left="652" Canvas.Top="564"/>
+        </Canvas>
+    </Canvas>
 </Page>

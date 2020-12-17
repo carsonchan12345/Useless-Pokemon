@@ -29,20 +29,18 @@ namespace IERG3080_part2
         }
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            _NavigationFrame.NavigationService.Navigate(new Uri("Navigation.xaml", UriKind.Relative));
+            _NavigationFrame.Navigate(new Uri("Navigation.xaml", UriKind.Relative));
             Pokemon p1 =new Pokemon(5);
             Pokemon p2 = new Pokemon(5);
             Pokemon p3 = new Pokemon(2);
             Pokemon p4 = new Pokemon(2);
-            MessageBox.Show(p3.Skill1);
-            MessageBox.Show(p1.Skill1);
-            Player Me = new Player("Peter");
+            Player Me = new Player();
             Me.AddPokemon(p1);
             Me.AddPokemon(p2);
             Me.AddPokemon(p3);
             Me.AddPokemon(p4);
-            MessageBox.Show(string.Join(",", Me.MyPokemon[0].Price));
             Me.DelPokemon(2);
+
 
         }
 
