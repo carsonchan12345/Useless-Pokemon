@@ -10,15 +10,14 @@ namespace IERG3080_part2
         private int money;
         private int candy;
         private int stardust;
-        private List<Pokemon> MyPokemon = new List<Pokemon>();
+        public List<Pokemon> MyPokemon = new List<Pokemon>();
         private int EvolveStone;
         public string Name { get { return name; } set { name = value; } }
         public int Money { get { return money; } set { money = value; } }
         public int Candy { get { return candy; } set { candy = value; } }
         public int startdust { get { return stardust; } set { stardust = value; } }
-        public Player(string name)
+        public Player()
         {
-            this.name = name;
             money = 500;
             candy = 10;
             stardust = 1000;
@@ -34,6 +33,16 @@ namespace IERG3080_part2
         {
             if (MyPokemon.Count >= elementAt)
                  MyPokemon.RemoveAt(elementAt);
+        }
+        static private Player instance;
+        static public Player Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new Player();
+                return instance;
+            }
         }
     }
 }

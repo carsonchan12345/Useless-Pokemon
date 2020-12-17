@@ -32,6 +32,7 @@ namespace IERG3080_part2
                 cp = cp + rnd.Next(50, 200);
                 return cp;
             }
+            set {cp=value; }
         }
         public int Id { get { return id; } set { id = value; } }
         public double Hp { get { return hp + Cp * 0.05; } set { hp = value; } }
@@ -53,6 +54,7 @@ namespace IERG3080_part2
             Random rnd = new Random();
             Hp = Hp + rnd.Next(1, 8);
             Attack = Attack + rnd.Next(2, 6);
+
             if (Lv == EvolveLv)
             {
                 id++;
