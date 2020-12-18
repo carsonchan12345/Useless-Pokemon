@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 
 namespace IERG3080_part2
 {
@@ -12,10 +13,13 @@ namespace IERG3080_part2
         private int stardust;
         public List<Pokemon> MyPokemon = new List<Pokemon>();
         private int evolveStone;
-        private double xcoordinate = 0;
-        private double ycoordinate = 0;
-        public double Xcoordinate { get { return xcoordinate; } set { xcoordinate = value; } }
-        public double Ycoordinate { get { return xcoordinate; } set { xcoordinate = value; } }
+        private Point playercoordinate = new Point(0,0);
+        private Point mapcoordinate = new Point(0,0);
+        private Point menucoordinate = new Point(0,0);
+        public Point Playercoordinate { get { return playercoordinate; } set { playercoordinate = value; } }
+        public Point Mapcoordinate { get { return mapcoordinate; } set { mapcoordinate = value; } }
+        public Point Menucoordinate { get { return menucoordinate; } set { menucoordinate = value; } }
+
         public string Name { get { return name; } set { name = value; } }
         public int EvolveStone { get { return evolveStone; } set { evolveStone = value; } }
         public int Money { get { return money; } set { money = value; } }

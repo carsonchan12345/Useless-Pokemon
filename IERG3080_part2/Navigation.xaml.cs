@@ -46,7 +46,6 @@ namespace IERG3080_part2
                     MessageBox.Show("YOU CAN'T LEAVE :) ");
                     MainMapPage again = new MainMapPage();
                     NavigationService.Navigate(again);
-
                 } 
                 if (e.Key == Key.A)
             {
@@ -76,8 +75,9 @@ namespace IERG3080_part2
                 Canvas.SetTop(Map, MyMapCoordinate.Y - 4);
                 user.Fill = UserImageDown;
             }
-            player.Xcoordinate = UserCoordinate.X;
-            player.Ycoordinate = UserCoordinate.Y;
+            player.Mapcoordinate = MyMapCoordinate;
+            player.Menucoordinate = MenuCoordinate;
+            player.Playercoordinate = UserCoordinate;
             userHitBox = new Rect(Canvas.GetLeft(user), Canvas.GetTop(user), user.Width, user.Height);
             GymBattleHitBox = new Rect(Canvas.GetLeft(GymBattle), Canvas.GetTop(GymBattle), GymBattle.Width, GymBattle.Height);
             if (userHitBox.IntersectsWith(GymBattleHitBox))
@@ -100,8 +100,7 @@ namespace IERG3080_part2
         }
         private void GameSetUp()
         {
-            MyCanvas.Focus();
-           
+            MyCanvas.Focus();          
             UserImageUp = new ImageBrush();
             UserImageUp.ImageSource = new BitmapImage(new Uri("../../../images/zup.png",UriKind.RelativeOrAbsolute));
             UserImageDown = new ImageBrush();
@@ -126,6 +125,16 @@ namespace IERG3080_part2
             gameTimer.Tick += GameLoop;
             gameTimer.Interval = TimeSpan.FromMilliseconds(1);
             gameTimer.Start();
+            Point CheckPoint = new Point(0, 0);
+               if (player.Mapcoordinate != CheckPoint)
+               {
+                   Canvas.SetLeft(user, player.Playercoordinate.X);
+                   Canvas.SetLeft(Menu, player.Menucoordinate.X);
+                   Canvas.SetLeft(Map, player.Mapcoordinate.X);
+                   Canvas.SetTop(user, player.Playercoordinate.Y);
+                   Canvas.SetTop(Menu, player.Menucoordinate.Y);
+                   Canvas.SetTop(Map, player.Mapcoordinate.Y);
+               } 
         }
         private void GameLoop(object sender, EventArgs e)
         {
