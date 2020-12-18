@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Xml;
 
 namespace IERG3080_part2
@@ -24,6 +26,16 @@ namespace IERG3080_part2
         private string skill2;
         private string skill3;
         private string skill4;
+        private ImageBrush pokemonImage;
+        public ImageBrush PokemonImage
+        {
+            get
+            {
+                pokemonImage = new ImageBrush();
+                pokemonImage.ImageSource = new BitmapImage(new Uri("../../../images/"+Id+".png", UriKind.RelativeOrAbsolute));
+                return pokemonImage;
+            }
+        }
         public int Cp
         {
             get

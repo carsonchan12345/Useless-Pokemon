@@ -36,13 +36,13 @@ namespace IERG3080_part2
             Pokemon p2 = new Pokemon(5);
             Pokemon p3 = new Pokemon(2);
             Pokemon p4 = new Pokemon(2);
-            Player Me = new Player();
-            Me.AddPokemon(p1);
-            Me.AddPokemon(p2);
-            Me.AddPokemon(p3);
-            Me.AddPokemon(p4);
-            Me.DelPokemon(2);
-            Me.Name = "Peter";
+            Player player = Player.Instance;
+            player.AddPokemon(p1);
+            player.AddPokemon(p2);
+            player.AddPokemon(p3);
+            player.AddPokemon(p4);
+            player.DelPokemon(2);
+            player.Name = "Peter";
         }
 
         private void EndButton_Click(object sender, RoutedEventArgs e)
