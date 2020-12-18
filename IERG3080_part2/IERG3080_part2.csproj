@@ -12,12 +12,18 @@
     <None Remove="3.png" />
     <None Remove="4.png" />
     <None Remove="5.png" />
+    <None Remove="ash.png" />
+    <None Remove="GymBattle.png" />
     <None Remove="images\1.png" />
     <None Remove="images\2.png" />
     <None Remove="images\3.png" />
     <None Remove="images\4.png" />
     <None Remove="images\5.png" />
+    <None Remove="images\ash.png" />
+    <None Remove="images\GymBattle.png" />
+    <None Remove="images\pokemon_ball.png" />
     <None Remove="map.png" />
+    <None Remove="pokemon_ball.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +32,9 @@
     <Resource Include="images\3.png" />
     <Resource Include="images\4.png" />
     <Resource Include="images\5.png" />
+    <Resource Include="images\ash.png" />
+    <Resource Include="images\GymBattle.png" />
+    <Resource Include="images\pokemon_ball.png" />
     <Resource Include="map.png" />
   </ItemGroup>
 

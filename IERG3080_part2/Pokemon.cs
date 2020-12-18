@@ -52,18 +52,12 @@ namespace IERG3080_part2
        public void LevelUp()
         {
             Random rnd = new Random();
-            Hp = Hp + rnd.Next(1, 8);
-            Attack = Attack + rnd.Next(2, 6);
-
-            if (Lv == EvolveLv)
-            {
-                id++;
-                Attack = Attack +rnd.Next(4,10);
-                Hp = Hp + rnd.Next(7, 13);
-            }
+            int tmp = rnd.Next(5, 10);
+            Cp += tmp;         
         }
         public Pokemon(int ID)
-        {           
+        {
+            Random rnd = new Random();
             XmlReader reader = XmlReader.Create("../../../data/pokemon.xml");
             while (reader.Read())
             {
@@ -80,8 +74,8 @@ namespace IERG3080_part2
                         this.lv = int.Parse(reader.GetAttribute("Lv"));
                         this.cp = int.Parse(reader.GetAttribute("Cp"));
                         this.type = reader.GetAttribute("Type");
-                        this.height = Convert.ToDouble(reader.GetAttribute("Height"));
-                        this.weight = Convert.ToDouble(reader.GetAttribute("Weight"));
+                        this.height = Convert.ToDouble(reader.GetAttribute("Height")) + rnd.NextDouble();
+                        this.weight = Convert.ToDouble(reader.GetAttribute("Weight")) + rnd.NextDouble();
                         this.skill1 = reader.GetAttribute("Skill1");
                         this.skill2 = reader.GetAttribute("Skill2");
                         this.skill3 = reader.GetAttribute("Skill3");
