@@ -93,7 +93,8 @@ namespace IERG3080_part2
                     if (userHitBox.IntersectsWith(PokemonHitBox) && x.Visibility == Visibility.Visible)
                     {
                         MessageBox.Show("Encounter Pokemon!");
-                        NavigationService.Navigate(new Uri("Capture.xaml", UriKind.Relative));
+                        Capture test=new Capture();
+                        test.ShowDialog();
                     }
                 }
             }
