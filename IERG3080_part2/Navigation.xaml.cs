@@ -48,7 +48,7 @@ namespace IERG3080_part2
                     MainMapPage again = new MainMapPage();
                     NavigationService.Navigate(again);
                 } 
-                if (e.Key == Key.A)
+            if (e.Key == Key.A)
             {
                 Canvas.SetLeft(user, UserCoordinate.X - 4);
                 Canvas.SetLeft(Menu, MenuCoordinate.X - 4);
@@ -79,27 +79,11 @@ namespace IERG3080_part2
             player.Mapcoordinate = MyMapCoordinate;
             player.Menucoordinate = MenuCoordinate;
             player.Playercoordinate = UserCoordinate;
-            userHitBox = new Rect(Canvas.GetLeft(user), Canvas.GetTop(user), user.Width, user.Height);
-            GymBattleHitBox = new Rect(564, 384, GymBattle.Width/8, GymBattle.Height/4);
-            if (userHitBox.IntersectsWith(GymBattleHitBox))
-            {
-                MessageBox.Show("GymBattle!");
-                NavigationService.Navigate(new Uri("GymBattle.xaml", UriKind.Relative));
-                gameTimer.Stop();
-            }
-            foreach (var x in Map.Children.OfType<Rectangle>())
-            {               
-                Rect PokemonHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
-                if ((string)x.Tag == "RandomPokemon")
-                {
-                    if (userHitBox.IntersectsWith(PokemonHitBox) && x.Visibility == Visibility.Visible)
-                    {
-                        gameTimer.Stop(); 
-                        MessageBox.Show("Encounter Pokemon!");
-                        NavigationService.Navigate(new Uri("Capture.xaml", UriKind.Relative));
-                    }
-                }
-            }
+            EncounterCondition();
+        }
+        private void PokemonBagButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("PokemonBag.xaml", UriKind.Relative));
         }
         private void GameSetUp()
         {
@@ -113,10 +97,10 @@ namespace IERG3080_part2
             UserImageRight = new ImageBrush();
             UserImageRight.ImageSource = new BitmapImage(new Uri("../../../images/zright.png",UriKind.RelativeOrAbsolute));
             user.Fill = UserImageDown;
-            foreach (var x in Map.Children.OfType<Rectangle>())
+            foreach (var x in Map.Children.OfType<Rectangle>())  
             {
                 Random rnd = new Random();
-                if ((string)x.Tag == "RandomPokemon")
+                if ((string)x.Tag == "RandomPokemon")    // spawn pokemon
                 {
                     ImageBrush PokemonImage = new ImageBrush();
                     int PokeId = rnd.Next(1, AmountOfPokemon);
@@ -128,11 +112,9 @@ namespace IERG3080_part2
                     x.Name ="pokemon_"+PokeId.ToString();
                 }
             }
-            gameTimer.Tick += GameLoop;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(500);
-            gameTimer.Start();
+  
             Point CheckPoint = new Point(0, 0);
-               if (player.Mapcoordinate != CheckPoint)
+               if (player.Mapcoordinate != CheckPoint)  //set player point
                {
                    Canvas.SetLeft(user, player.Playercoordinate.X);
                    Canvas.SetLeft(Menu, player.Menucoordinate.X);
@@ -140,9 +122,12 @@ namespace IERG3080_part2
                    Canvas.SetTop(user, player.Playercoordinate.Y);
                    Canvas.SetTop(Menu, player.Menucoordinate.Y);
                    Canvas.SetTop(Map, player.Mapcoordinate.Y);
-               } 
+               }
+            gameTimer.Tick += GameLoop;
+            gameTimer.Interval = TimeSpan.FromMilliseconds(500);
+            gameTimer.Start();
         }
-        private void GameLoop(object sender, EventArgs e)
+        private void GameLoop(object sender, EventArgs e) // keep pokemon move
         {
             foreach (var x in Map.Children.OfType<Rectangle>())
             {
@@ -157,9 +142,29 @@ namespace IERG3080_part2
                 }
             }
         }
-        private void PokemonBagButton_Click(object sender, RoutedEventArgs e)
+        private void EncounterCondition() //  when Player encounter something
         {
-            NavigationService.Navigate(new Uri("PokemonBag.xaml", UriKind.Relative));
+            userHitBox = new Rect(Canvas.GetLeft(user), Canvas.GetTop(user), user.Width, user.Height);
+            GymBattleHitBox = new Rect(564, 384, GymBattle.Width / 8, GymBattle.Height / 4);
+            if (userHitBox.IntersectsWith(GymBattleHitBox))
+            {
+                MessageBox.Show("GymBattle!");
+                NavigationService.Navigate(new Uri("GymBattle.xaml", UriKind.Relative));
+                gameTimer.Stop();
+            }
+            foreach (var x in Map.Children.OfType<Rectangle>())
+            {
+                Rect PokemonHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                if ((string)x.Tag == "RandomPokemon")
+                {
+                    if (userHitBox.IntersectsWith(PokemonHitBox) && x.Visibility == Visibility.Visible)
+                    {
+                        gameTimer.Stop();
+                        MessageBox.Show("Encounter Pokemon!");
+                        NavigationService.Navigate(new Uri("Capture.xaml", UriKind.Relative));
+                    }
+                }
+            }
         }
     }
 }
