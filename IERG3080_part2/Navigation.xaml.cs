@@ -21,6 +21,7 @@ namespace IERG3080_part2
     public partial class MainMapPage : Page
     {
         Player player = Player.Instance;
+        private int AmountOfPokemon=6;
         private ImageBrush UserImageUp, UserImageDown, UserImageLeft, UserImageRight;
         Rect userHitBox, GymBattleHitBox;
         DispatcherTimer gameTimer = new DispatcherTimer(); 
@@ -30,7 +31,7 @@ namespace IERG3080_part2
             GameSetUp();
         }
         private void User_KeyDown(object sender, KeyEventArgs e)
-        {
+        {           
             Point MyMapCoordinate = Map.TranslatePoint(new Point(0, 0), MyCanvas);
             Point UserCoordinate = user.TranslatePoint(new Point(0, 0), Map);
             Point MenuCoordinate = Menu.TranslatePoint(new Point(0, 0), Map);
@@ -79,11 +80,12 @@ namespace IERG3080_part2
             player.Menucoordinate = MenuCoordinate;
             player.Playercoordinate = UserCoordinate;
             userHitBox = new Rect(Canvas.GetLeft(user), Canvas.GetTop(user), user.Width, user.Height);
-            GymBattleHitBox = new Rect(Canvas.GetLeft(GymBattle), Canvas.GetTop(GymBattle), GymBattle.Width, GymBattle.Height);
+            GymBattleHitBox = new Rect(564, 384, GymBattle.Width/8, GymBattle.Height/4);
             if (userHitBox.IntersectsWith(GymBattleHitBox))
             {
                 MessageBox.Show("GymBattle!");
                 NavigationService.Navigate(new Uri("GymBattle.xaml", UriKind.Relative));
+                gameTimer.Stop();
             }
             foreach (var x in Map.Children.OfType<Rectangle>())
             {               
@@ -92,6 +94,7 @@ namespace IERG3080_part2
                 {
                     if (userHitBox.IntersectsWith(PokemonHitBox) && x.Visibility == Visibility.Visible)
                     {
+                        gameTimer.Stop(); 
                         MessageBox.Show("Encounter Pokemon!");
                         NavigationService.Navigate(new Uri("Capture.xaml", UriKind.Relative));
                     }
@@ -116,14 +119,17 @@ namespace IERG3080_part2
                 if ((string)x.Tag == "RandomPokemon")
                 {
                     ImageBrush PokemonImage = new ImageBrush();
-                    int PokeId = rnd.Next(1, 6);
+                    int PokeId = rnd.Next(1, AmountOfPokemon);
                     PokemonImage.ImageSource = new BitmapImage(new Uri("../../../images/"+ PokeId + ".png", UriKind.RelativeOrAbsolute));
                     x.Fill=PokemonImage;
+                    Point InitialPoint = new Point(rnd.Next(50, 1350), rnd.Next(30, 1050));
+                    Canvas.SetLeft(x, InitialPoint.X);
+                    Canvas.SetTop(x, InitialPoint.Y);
                     x.Name ="pokemon_"+PokeId.ToString();
                 }
             }
             gameTimer.Tick += GameLoop;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(1);
+            gameTimer.Interval = TimeSpan.FromMilliseconds(500);
             gameTimer.Start();
             Point CheckPoint = new Point(0, 0);
                if (player.Mapcoordinate != CheckPoint)
