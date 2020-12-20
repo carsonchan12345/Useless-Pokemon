@@ -94,6 +94,7 @@ namespace IERG3080_part2
 
         private bool Chancescheck()
         {
+            Chances += 50;
             bool result;
             if (Chances>=100)
             {
@@ -103,7 +104,7 @@ namespace IERG3080_part2
             else
             {
                 result = false;
-                Chances += 50;
+                
             }
             return result;
         }
