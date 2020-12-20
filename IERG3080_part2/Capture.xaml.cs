@@ -22,7 +22,7 @@ namespace IERG3080_part2
     /// </summary>
     public partial class Capture : Window
     {
-        static int chances = 0;
+        static int Chances = 0;
         private Uri PokemonImage;
         private Random rnd;
         private int rndint;
@@ -78,15 +78,41 @@ namespace IERG3080_part2
             else
             {
                 MessageBox.Show("Your guess is incorrect! Can't be Captured!");
+                if (Chancescheck())
+                {
+                    MessageBox.Show("But you have 100 chances now, you still get it!");
+                    Addpokemon();
+                }
             }
             this.Close();
         }
 
-        private void Gamestart()
+        private void Displaychances()
+        { string tmp = "100% catch it if you accumlated over 100 chances. Your chances now: " + Chances.ToString();
+            chances.Text = tmp;
+        }
+
+        private bool Chancescheck()
         {
+            bool result;
+            if (Chances>=100)
+            {
+                result = true;
+                Chances = 0;
+            }
+            else
+            {
+                result = false;
+                Chances += 50;
+            }
+            return result;
+        }
+        private void Gamestart()
+        {   
             Loadimage(id);
             Displayimage();
             Displaytitle();
+            Displaychances();
 
         }
 

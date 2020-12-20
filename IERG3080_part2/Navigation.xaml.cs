@@ -162,7 +162,8 @@ namespace IERG3080_part2
                     {
                         gameTimer.Stop();
                         MessageBox.Show("Encounter Pokemon!");
-                        NavigationService.Navigate(new Uri("Capture.xaml", UriKind.Relative));
+                        Capture test = new Capture();
+                        test.ShowDialog();
                     }
                 }
             }
