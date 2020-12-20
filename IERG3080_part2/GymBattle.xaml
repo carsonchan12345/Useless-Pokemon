@@ -7,18 +7,18 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid>
-        <Image x:Name="current" HorizontalAlignment="Left" Height="195" Margin="34,55,0,0" VerticalAlignment="Top" Width="247"/>
-        <Image x:Name="Gymcurrent" HorizontalAlignment="Left" Height="195" Margin="521,55,0,0" VerticalAlignment="Top" Width="227"/>
+        <Image x:Name="currentimg" HorizontalAlignment="Left" Height="195" Margin="34,55,0,0" VerticalAlignment="Top" Width="247"/>
+        <Image x:Name="gymcurrentimg" HorizontalAlignment="Left" Height="195" Margin="521,55,0,0" VerticalAlignment="Top" Width="227"/>
         <TextBlock HorizontalAlignment="Left" Height="56" Margin="337,55,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="162"/>
-        <WrapPanel HorizontalAlignment="Left" Height="142" Margin="79,234,0,0" VerticalAlignment="Top" Width="597">
-            <Button Content="Button" HorizontalAlignment="Left" Height="48" Margin="117,280,0,0" VerticalAlignment="Top" Width="217"/>
-            <Button Content="Button" HorizontalAlignment="Left" Height="48" Margin="469,280,0,0" VerticalAlignment="Top" Width="217"/>
-            <Button Content="Button" HorizontalAlignment="Left" Height="48" Margin="117,349,0,0" VerticalAlignment="Top" Width="217"/>
-            <Button Content="Button" HorizontalAlignment="Left" Height="48" Margin="469,349,0,0" VerticalAlignment="Top" Width="217"/>
+        <WrapPanel x:Name="skills" HorizontalAlignment="Center" Height="96" Margin="0,296,0,0" VerticalAlignment="Top" Width="442">
+            <Button x:Name="_1" Content="Button" Height="48"  VerticalAlignment="Top" Width="217"/>
+            <Button x:Name="_2" Content="Button"  Height="48"  VerticalAlignment="Top" Width="217"/>
+            <Button x:Name="_3" Content="Button"  Height="48"  VerticalAlignment="Top" Width="217"/>
+            <Button x:Name="_4" Content="Button"  Height="48"  VerticalAlignment="Center" Width="217"/>
         </WrapPanel>
         <TextBlock x:Name="hp" HorizontalAlignment="Left" Height="29" Margin="53,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="178"/>
         <TextBlock x:Name="Gymhp" HorizontalAlignment="Left" Height="28" Margin="526,11,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="150"/>
-        
+
 
 
     </Grid>
