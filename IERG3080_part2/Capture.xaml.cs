@@ -31,12 +31,12 @@ namespace IERG3080_part2
         public int Result { get; private set; }
         private int Answer;
 
-        public Capture()
+        public Capture(int id)
         {
             InitializeComponent();
            
             rnd = new Random();
-            id = rnd.Next(1, 6);
+            this.id = id;
             Loadpokemon();
             rndint= rnd.Next(1, 6);
             Gamestart();

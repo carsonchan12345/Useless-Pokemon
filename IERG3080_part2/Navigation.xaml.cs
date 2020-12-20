@@ -149,10 +149,12 @@ namespace IERG3080_part2
             GymBattleHitBox = new Rect(564, 384, GymBattle.Width / 8, GymBattle.Height / 4);
             if (userHitBox.IntersectsWith(GymBattleHitBox))
             {
+                gameTimer.Stop();
                 MessageBox.Show("GymBattle!");
                 Gymbattle test = new Gymbattle();
                 test.ShowDialog();
-                gameTimer.Stop();
+                MainMapPage again = new MainMapPage();
+                NavigationService.Navigate(again);
             }
             foreach (var x in Map.Children.OfType<Rectangle>())
             {
@@ -161,10 +163,14 @@ namespace IERG3080_part2
                 {
                     if (userHitBox.IntersectsWith(PokemonHitBox) && x.Visibility == Visibility.Visible)
                     {
+                      
                         gameTimer.Stop();
                         MessageBox.Show("Encounter Pokemon!");
-                        Capture test = new Capture();
+                        string[] pokeId = x.Name.Split("pokemon_");
+                        Capture test = new Capture(int.Parse(pokeId[1]));
                         test.ShowDialog();
+                        MainMapPage again = new MainMapPage();
+                        NavigationService.Navigate(again);
                     }
                 }
             }
