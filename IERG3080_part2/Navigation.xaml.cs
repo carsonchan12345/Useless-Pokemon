@@ -37,6 +37,7 @@ namespace IERG3080_part2
             Point MenuCoordinate = Menu.TranslatePoint(new Point(0, 0), Map);
             if (e.Key == Key.Left || e.Key == Key.Down || e.Key == Key.Up || e.Key == Key.Right)
             {
+                gameTimer.Stop();
                 MessageBox.Show(" W (Up) S (Down) A (Left) D (Right) ");
                 MainMapPage again = new MainMapPage();
                 NavigationService.Navigate(again);
