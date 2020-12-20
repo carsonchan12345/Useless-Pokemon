@@ -22,7 +22,7 @@ namespace IERG3080_part2
     /// </summary>
     public partial class Capture : Window
     {
-        
+        static int chances = 0;
         private Uri PokemonImage;
         private Random rnd;
         private int rndint;

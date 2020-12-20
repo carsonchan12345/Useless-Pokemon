@@ -149,7 +149,8 @@ namespace IERG3080_part2
             if (userHitBox.IntersectsWith(GymBattleHitBox))
             {
                 MessageBox.Show("GymBattle!");
-                NavigationService.Navigate(new Uri("GymBattle.xaml", UriKind.Relative));
+                Gymbattle test = new Gymbattle();
+                test.ShowDialog();
                 gameTimer.Stop();
             }
             foreach (var x in Map.Children.OfType<Rectangle>())
