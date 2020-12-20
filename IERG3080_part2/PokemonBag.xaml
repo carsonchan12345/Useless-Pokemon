@@ -10,6 +10,26 @@
       Title="PokemonBag">
 
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="249,178,0,0" VerticalAlignment="Top" Height="109" Width="298" Click="Button_Click"/>
+        <Button x:Name="PokemonBagbutton" Content="" Canvas.Left="860" Canvas.Top="654" Width="100" Height="100" Click="PokemonBagButton_Click" Focusable="False" Foreground="#00000000" BorderBrush="Transparent" Margin="690,0,10,350">
+            <Button.Background>
+                <ImageBrush ImageSource="images/Backbutton.png"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Grid Background="{TemplateBinding Background}">
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label x:Name="UpperMenu" Content="Menu:" HorizontalAlignment="Left" Height="53" Margin="10,10,0,0" VerticalAlignment="Top" Width="675" FontSize="25" FontFamily="Algerian"/>
+        <WrapPanel HorizontalAlignment="Left" Height="334" Margin="25,68,0,0" VerticalAlignment="Top" Width="572" Name="wrapPanel">
+           
+        </WrapPanel>
     </Grid>
 </Page>

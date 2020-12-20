@@ -18,12 +18,13 @@ namespace IERG3080_part2
     /// </summary>
     public partial class PokemonBag : Page
     {
+        Player player = Player.Instance;
         public PokemonBag()
         {
             InitializeComponent();
+            UpperMenu.Content = "Candy: " + player.Candy + "       stardust: " + player.startdust + "       Money: " + player.Money;
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void PokemonBagButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("Navigation.xaml", UriKind.Relative));
         }

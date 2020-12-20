@@ -19,9 +19,9 @@
                     <ImageBrush ImageSource="images/GymBattle.png"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle Tag="RandomPokemon" Height="40" Width="40" Fill="Red" Canvas.Left="297" Canvas.Top="464" />
+            <Rectangle Tag="RandomPokemon" Height="40" Width="40" Fill="Red" Canvas.Left="564" Canvas.Top="384" />
             <Rectangle Tag="RandomPokemon" Height="40" Width="40" Fill="Red" Canvas.Left="342" Canvas.Top="752" />
-            <Rectangle Tag="RandomPokemon" Height="40" Width="40" Fill="Red" Canvas.Left="502" Canvas.Top="944" />
+            <Rectangle Tag="RandomPokemon" Height="40" Width="40" Fill="Red" Canvas.Left="584" Canvas.Top="1004" />
             <Rectangle Tag="RandomPokemon" Height="40" Width="40" Fill="Red" Canvas.Left="502" Canvas.Top="612" />
             <Rectangle Tag="RandomPokemon" Height="40" Width="40" Fill="Red" Canvas.Left="1132" Canvas.Top="592" />
             <Rectangle Tag="RandomPokemon" Height="40" Width="40" Fill="Red" Canvas.Left="1010" Canvas.Top="184" />

@@ -19,7 +19,6 @@ namespace IERG3080_part2
         public Point Playercoordinate { get { return playercoordinate; } set { playercoordinate = value; } }
         public Point Mapcoordinate { get { return mapcoordinate; } set { mapcoordinate = value; } }
         public Point Menucoordinate { get { return menucoordinate; } set { menucoordinate = value; } }
-
         public string Name { get { return name; } set { name = value; } }
         public int EvolveStone { get { return evolveStone; } set { evolveStone = value; } }
         public int Money { get { return money; } set { money = value; } }

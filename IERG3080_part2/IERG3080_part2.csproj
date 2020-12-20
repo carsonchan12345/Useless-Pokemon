@@ -13,6 +13,7 @@
     <None Remove="4.png" />
     <None Remove="5.png" />
     <None Remove="ash.png" />
+    <None Remove="Backbutton.png" />
     <None Remove="GymBattle.png" />
     <None Remove="images\1.png" />
     <None Remove="images\2.png" />
@@ -20,6 +21,7 @@
     <None Remove="images\4.png" />
     <None Remove="images\5.png" />
     <None Remove="images\ash.png" />
+    <None Remove="images\Backbutton.png" />
     <None Remove="images\GymBattle.png" />
     <None Remove="images\pokemon_ball.png" />
     <None Remove="map.png" />
@@ -33,6 +35,7 @@
     <Resource Include="images\4.png" />
     <Resource Include="images\5.png" />
     <Resource Include="images\ash.png" />
+    <Resource Include="images\Backbutton.png" />
     <Resource Include="images\GymBattle.png" />
     <Resource Include="images\pokemon_ball.png" />
     <Resource Include="map.png" />
