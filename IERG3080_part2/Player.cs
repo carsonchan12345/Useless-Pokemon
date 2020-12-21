@@ -26,21 +26,21 @@ namespace IERG3080_part2
         public int startdust { get { return stardust; } set { stardust = value; } }
         public Player()
         {
-            money = 500;
-            candy = 10;
-            stardust = 1000;
+            money = 5000;
+            candy = 1000;
+            stardust = 10000;
             EvolveStone = 2;
 
         }
         public void AddPokemon(Pokemon poke)
         {
-            if(MyPokemon.Count<6)
-                  MyPokemon.Add(poke);
-         //   else ???
+            if (MyPokemon.Count < 6)
+                MyPokemon.Add(poke);
+            else MessageBox.Show("Full Bag! Can't get the pokemon!!");
         }
         public void DelPokemon(int elementAt ) //by object or by num?
         {
-            if (MyPokemon.Count >= elementAt)
+            if (MyPokemon.Count > elementAt)
                  MyPokemon.RemoveAt(elementAt);
         }
         private static Player instance;
