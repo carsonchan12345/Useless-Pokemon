@@ -35,13 +35,10 @@ namespace IERG3080_part2
             Pokemon p1 =new Pokemon(1);
             Pokemon p2 = new Pokemon(3);
             Pokemon p3 = new Pokemon(5);
-            Pokemon p4 = new Pokemon(2);
             Player player = Player.Instance;
             player.AddPokemon(p1);
             player.AddPokemon(p2);
             player.AddPokemon(p3);
-            player.AddPokemon(p4);
-            player.DelPokemon(4);
             player.Name = "Peter";
         }
 

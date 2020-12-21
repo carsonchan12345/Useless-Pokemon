@@ -46,10 +46,10 @@ namespace IERG3080_part2
             set {cp=value; }
         }
         public int Id { get { return id; } set { id = value; } }
-        public double Hp { get { return Math.Round(hp + Cp * 0.05,2); } set { hp = value; } }
+        public double Hp { get { return Math.Round(hp + Cp * 0.07,2); } set { hp = value; } }
         public int Lv { get { return lv; } set { lv = value; } }
         public int Price { get { return price; } set { price = value; } }
-        public double Attack { get { return Math.Round(attack + Cp * 0.07,2);  } set { attack = value; } }
+        public double Attack { get { return Math.Round(attack + Cp * 0.05,2);  } set { attack = value; } }
         public int EvolveLv { get { return evolveLv; } set { evolveLv = value; } }
         public string Evolve { get { return evolve; } set { evolve = value; } }
         public string Type { get { return type; } set { type = value; } }

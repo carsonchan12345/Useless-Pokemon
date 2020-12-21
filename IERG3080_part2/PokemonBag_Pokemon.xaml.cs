@@ -53,7 +53,6 @@ namespace IERG3080_part2
             NavigationService.Navigate(new Uri("PokemonBag.xaml", UriKind.Relative));
         }
 
-     
         private void Evolution_Click(object sender, RoutedEventArgs e)
         {
             EvPokemon();
@@ -70,6 +69,16 @@ namespace IERG3080_part2
         {
             PowerUpPokemon();
             Refresh();
+        }
+        private void Rename_Click(object sender, RoutedEventArgs e)
+        {
+            if (RenameTextBox.Visibility == Visibility.Hidden)
+                RenameTextBox.Visibility = Visibility.Visible;
+            else
+            {
+                player.MyPokemon[index].Name = RenameTextBox.Text;
+                Refresh();
+            }
         }
 
         private void Refresh()
@@ -110,25 +119,11 @@ namespace IERG3080_part2
                 MessageBox.Show("Pokemon EvolveLv is " + player.MyPokemon[index].EvolveLv);
             else
             {
+                player.EvolveStone--;
                 player.MyPokemon[index] = player.MyPokemon[index].PokemonEvolve();
                 MessageBox.Show("Congratulation!!!!");
-            }
-                
+            }              
         }
 
-        private void Rename_Click(object sender, RoutedEventArgs e)
-        {
-            if (RenameTextBox.Visibility == Visibility.Hidden)
-                RenameTextBox.Visibility = Visibility.Visible;
-            else
-            {
-                player.MyPokemon[index].Name = RenameTextBox.Text;
-                Refresh();
-            }
-               
-
-           
-           
-        }
     }
 }
