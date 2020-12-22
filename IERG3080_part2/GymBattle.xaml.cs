@@ -23,7 +23,7 @@ namespace IERG3080_part2
     public partial class Gymbattle : Window
     {
 
-        public bool End { get; private set; }
+        private bool End;
         Button[] Skill = new Button[4];
         private Uri PokemonImage;
         public bool Playerturns { get; private set; }
@@ -149,14 +149,21 @@ namespace IERG3080_part2
 
         }
 
+
+        public bool Isend()
+        {
+            return End;
+        }
+
         private void PlayerLoadNext()//wrapper
         {
             playercurrentpokeindex += 1;
             if (playercurrentpokeindex >= Player.Instance.MyPokemon.Count())
             {
                 MessageBox.Show("You have no pokemon left!");
-
+                End = true;
                 this.Close();
+
 
             }
             else
@@ -207,9 +214,9 @@ namespace IERG3080_part2
         {
             string tmp;
             if (Playerturns)
-                tmp = "Player use " + skill +"deal -"+ attack + "to gym";
+                tmp = "Player use " + skill +"deal -"+ attack + " to gym";
             else
-                tmp = info.Text + "\nGym use " + skill + "deal -" + attack + "to player";
+                tmp = info.Text + "\nGym use " + skill + "deal -" + attack + " to player";
             info.Text = tmp;
         }
         private void Checkhp()

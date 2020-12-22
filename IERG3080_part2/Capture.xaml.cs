@@ -74,6 +74,7 @@ namespace IERG3080_part2
             {
                 MessageBox.Show("Your guess is correct! Captured!");
                 Addpokemon();
+                Addmiscell(1, 1, 1);
             }
             else
             {
@@ -82,9 +83,19 @@ namespace IERG3080_part2
                 {
                     MessageBox.Show("But you have 100 chances now, you still get it!");
                     Addpokemon();
+                    Addmiscell(1, 1, 1);
                 }
             }
             this.Close();
+        }
+
+        private void Addmiscell(int startdust, int Money, int Candy)
+        {
+
+            Player.Instance.startdust += startdust;
+            Player.Instance.Money += Money;
+            Player.Instance.Candy += Candy;
+
         }
 
         private void Displaychances()
