@@ -9,7 +9,7 @@ Every class follows the MVP rules to seperate between the logic, view. View resp
 <p align="center"><img src="./pics/mvp.png"  /></p> 
 For updating the view, we try to use some displayxxx method in class for the display update to seperate the display from the logic of the backend. Also each event handler has its own method, e.g. USER DOWN , PokemonBagButton_Click and SUBMIT_CLICK to seperate the presenter from others. 
 
-#### Component
+### Component
 
 #### Capture
 
