@@ -29,6 +29,8 @@ Observer: Event handler of the submit click. When the click event is triggered, 
 
 Wrapper: Some methods are wrapped into one larger method for some common combo of calling. Also ensure the small parts can still be modularized. 
 
+Adaptor: Allow to interact with the Navigation class that displaying the encounter pokemon on the map. Call caputure class with the pokemon ID so that it is consistence with the map.
+
 Encapsulation is adopted to prevent the unwanted change from outside.
 
 
