@@ -70,3 +70,43 @@ Model: A static parameter in capture class. To add and verify if the luck parame
 View: Extra textblock is added under the capture windows to show the luck.
 
 Presenter: Update the textblock when initializing capture windows to view.
+
+#### Navigation
+
+<p align="center"><img src="./pics/navigation.png" width = "500" /></p>
+
+Using W(up) S(down) A(Left) D(Right) to control character moving. Player encounter pokemon will show capture window. Player enter gymbattle will show gymbattle window. Also, Click on pokemonball button will navigate to pokemon bag page.
+
+
+Model: Get the pokemon image form pokemon class and the coordinate from player class.
+
+View: The view is base on the map controlled by canvas. The randomized pokemon will be displayed in different location by the presenter initiatlize everytime. 
+
+Presenter: The presenter control the move of the character when player press W(up) S(down) A(Left) D(Right). When player do any action such as gymbattle or capture, the page will refresh that 10 pokemon will randomize in different location and random move around the map.
+
+#### Poekmon Bag
+<p align="center"><img src="./pics/pokemonBag.png" width = "500" /></p>
+<p align="center"><img src="./pics/pokemonBag_pokemon.png" width = "500" /></p>
+
+Click on pokemonball button, pokemonBag page will display all player's pokemon. Clicking the corresponing pokemon will navigate to pokemonBag_pokemon page which display the data of the pokemon. Player can do PoweUp, evolution, sell ,rename process with the that pokemon.
+
+Model: Get all player infromation from player class including MyPokemon, money, stardust and so on.
+
+View: After click corresponing pokemon, the pokemon information will be displayed. The presenter will update the view.
+
+Presenter: Player can click on button to do PoweUp, evolution, sell ,rename process. It will update Player class data and update the UI immediately.
+
+### Major Model
+
+#### Pokemon Class
+
+In the real world situation, the pokemon list may modify constantly. We decide create pokemon.xml to make it easily updated and modify. Our pokemon class read pokemon.xml to acquire data.  Below is an example in pokemon.xml.
+
+	<Pokemon Id="1" Name="Bulbasaur" Hp="10" Attack="5" EvolveLv="25" Evolve="Ivysaur" Lv= "5" Cp="77" Type="grass" Height="2.04" Weight="15.2" Skill1="Comet Punch" Skill2="Rage" Skill3="null" Skill4="null" Price="100"></Pokemon>
+	<Pokemon Id="2" Name="Ivysaur" Hp="15" Attack="7" EvolveLv="-1" Evolve="null" Lv= "10" Cp="107" Type="grass" Height="3.03" Weight="28.7" Skill1="Comet Punch" Skill2="null" Skill3="null" Skill4="null" Price="150"></Pokemon>
+ 
+Pokemon class create proerties for each above attribute in order to let our developer easy to implement. For the pokemon evolution, when the pokemon achieve EvolveLv, the pokemon can evolve(Evolve!="null"). The evoluted form is the next id of the pokemon.
+
+#### Player Class
+
+For the player class, player class record the player information such as player's pokemon,money and so on. It use void AddPokemon add pokemon object to the MyPokemon List. Also, singleton pattern ensure that the entire system only instantiates one object.
