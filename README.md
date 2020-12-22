@@ -5,7 +5,7 @@
 
 #### Capture
 
- 
+<p align="center"><img src="./pics/capture.png" width = "300" /></p> 
 For capture, a mini-game of random number guessing from 1-5 is introduced.
 A random pokemon will encounter. Player needs to enter his guess. Correct guessing will add this pokemon to the player pokemon bag.
 
@@ -26,7 +26,7 @@ Encapsulation is adopted to prevent the unwanted change from outside.
 
 #### Gym Battle
 
-
+<p align="center"><img src="./pics/gym.png" width = "300" /></p>
 Read all pokemon from pokebag for battle with some predefined GYM.
 
 Model: Load all pokemon from pokebag and battle one by one until all has HP<=0. Read the chosen skill from presenter and calculate the damage based on the skill attack. Then random choose a skill for GYM to attack player. Repeat until one is fainted then next pokemon in the list will be loaded. Repeat until no pokemon are left and decide who is the winner.
@@ -44,7 +44,7 @@ Wrapper: Some methods are wrapped into one larger method for some common combo o
 
 #### Extra feature:
  
-
+<p align="center"><img src="./pics/xtra.png" width = "300" /></p>
 New extra mode for capture class. Adding a mechanism of accumulating of the luck. Every time the player fails to catch a pokemon, luck is accumulated. If luck is >=100, then player must catch the pokemon.
 
 This is demonstrating the use of static type in class. It can be served as the global parameter.
