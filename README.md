@@ -47,8 +47,11 @@ Presenter: Updating the current pokemon if new pokemon is loaded. Update HP ever
 Design pattern:
 
 Observer: For skill click event from user. 
+
 Composite: The skills button as button group, bound together. 
+
 Wrapper: Some methods are wrapped into one larger method for some common combo of calling. Also ensure the small parts can still be modularized. 
+
 
 
 #### Extra feature:
