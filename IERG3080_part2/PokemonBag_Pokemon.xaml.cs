@@ -20,10 +20,10 @@ namespace IERG3080_part2
     {
         Player player = Player.Instance;
         private int index;
-        public PokemonBag_Pokemon(int index)
+        public PokemonBag_Pokemon(int index)  
         {
             InitializeComponent();
-            this.index = index;
+            this.index = index;   //change UI base on player class
             pokeImage.Fill = player.MyPokemon[index].PokemonImage;
             pokeAttack.Content = "Attack: " + player.MyPokemon[index].Attack;
             pokeCp.Content = "CP: " + player.MyPokemon[index].Cp;

@@ -69,7 +69,7 @@ namespace IERG3080_part2
         }
         public Pokemon PokemonEvolve()
         {        
-                Pokemon newPoke = new Pokemon(Id + 1);
+                Pokemon newPoke = new Pokemon(Id + 1);    // If the pokemon can evolve(see the evolve whether is null), the evolution is the next id pokemon
                 Random rnd = new Random();
                 Cp += rnd.Next(30, 40);
                 newPoke.Cp = Cp;

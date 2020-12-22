@@ -88,8 +88,8 @@ namespace IERG3080_part2
         }
         private void GameSetUp()
         {
-            MyCanvas.Focus();          
-            UserImageUp = new ImageBrush();
+            MyCanvas.Focus();         
+            UserImageUp = new ImageBrush();   //set charchter  up down left right image
             UserImageUp.ImageSource = new BitmapImage(new Uri("../../../images/zup.png",UriKind.RelativeOrAbsolute));
             UserImageDown = new ImageBrush();
             UserImageDown.ImageSource = new BitmapImage(new Uri("../../../images/zdown.png", UriKind.RelativeOrAbsolute));
@@ -128,7 +128,7 @@ namespace IERG3080_part2
             gameTimer.Interval = TimeSpan.FromMilliseconds(500);
             gameTimer.Start();
         }
-        private void GameLoop(object sender, EventArgs e) // keep pokemon move
+        private void GameLoop(object sender, EventArgs e) // pokemon random move
         {
             foreach (var x in Map.Children.OfType<Rectangle>())
             {
@@ -146,7 +146,7 @@ namespace IERG3080_part2
         private void EncounterCondition() //  when Player encounter something
         {
             userHitBox = new Rect(Canvas.GetLeft(user), Canvas.GetTop(user), user.Width, user.Height);
-            GymBattleHitBox = new Rect(564, 384, GymBattle.Width / 8, GymBattle.Height / 4);
+            GymBattleHitBox = new Rect(564, 384, GymBattle.Width / 8, GymBattle.Height / 8);
             if (userHitBox.IntersectsWith(GymBattleHitBox))
             {
                 gameTimer.Stop();
