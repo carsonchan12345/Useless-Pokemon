@@ -3,6 +3,13 @@
 
 ### Overview
 
+
+### Model View Presenter
+Every class follows the MVP rules to seperate between the logic, view. View responsible for the graphic, presenter is involved in updating the graphic and the user input, keyboard WASD and mouse click. Model responsible for the logic of the gameplay, Processing the data. Each level pass the data to other components as in the following picture.
+<p align="center"><img src="./pics/mvp.png"  /></p> 
+For updating the view, we try to use some displayxxx method in class for the display update to seperate the display from the logic of the backend. Also each event handler has its own method, e.g. USER DOWN , PokemonBagButton_Click and SUBMIT_CLICK to seperate the presenter from others. 
+
+
 #### Capture
 
 <p align="center"><img src="./pics/capture.png" width = "500" /></p> 
