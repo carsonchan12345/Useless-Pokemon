@@ -1,5 +1,9 @@
 # IERG3080_part2
-####Capture
+## Pokemon
+
+### Overview
+
+#### Capture
 
  
 For capture, a mini-game of random number guessing from 1-5 is introduced.
@@ -20,7 +24,7 @@ Wrapper: Some methods are wrapped into one larger method for some common combo o
 Encapsulation is adopted to prevent the unwanted change from outside.
 
 
-####Gym Battle
+#### Gym Battle
 
 
 Read all pokemon from pokebag for battle with some predefined GYM.
@@ -38,7 +42,7 @@ Composite: The skills button as button group, bound together.
 Wrapper: Some methods are wrapped into one larger method for some common combo of calling. Also ensure the small parts can still be modularized. 
 
 
-####Extra feature:
+#### Extra feature:
  
 
 New extra mode for capture class. Adding a mechanism of accumulating of the luck. Every time the player fails to catch a pokemon, luck is accumulated. If luck is >=100, then player must catch the pokemon.
