@@ -28,7 +28,7 @@
             </Button.Style>
         </Button>
         <Label x:Name="UpperMenu" Content="Menu:" HorizontalAlignment="Left" Height="53" Margin="10,10,0,0" VerticalAlignment="Top" Width="675" FontSize="25" FontFamily="Algerian"/>
-        <WrapPanel HorizontalAlignment="Left" Height="334" Margin="25,68,0,0" VerticalAlignment="Top" Width="572" Name="wrapPanel">
+        <WrapPanel x:Name="PokemonList" HorizontalAlignment="Left" Height="334" Margin="25,68,0,0" VerticalAlignment="Top" Width="572" >
            
         </WrapPanel>
     </Grid>
