@@ -32,9 +32,9 @@ For the player class, player class records the player information such as player
 <p align="center"><img src="./pics/capture.png" width = "500" /></p> 
 
 For capture, a mini-game of a random number guessing from 1-5 is introduced.
-A random pokemon will encounter. The player needs to enter his guess. Correct guessing will add this pokemon to the player pokemon bag.
+A random pokemon will encounter. The player needs to enter his guess. Correct guessing will add this pokemon to the player class with singleton pattern.
 
-Model: Randomly choose 2 integers, one is pokemon ID, one is the guess number. And checking the input number from the presenter whether it is the same as the guess number or not. If it is the same, add the pokemon to pokebag and add some misc. e.g. money, stardust, and candy for LV up or evolving.
+Model: Randomly choose 2 integers, one is pokemon ID, one is the guess number. And checking the input number from the presenter whether it is the same as the guess number or not. If it is the same, add the pokemon to player class and add some misc. e.g. money, stardust, and candy for LV up or evolving.
 
 View: Displaying the image when initializing the corresponding ID from a model. Providing a textbox and button to visually promote the player to enter a number.
 
@@ -55,9 +55,9 @@ Encapsulation is adopted to prevent unwanted change from outside.
 
 <p align="center"><img src="./pics/gym.png" width = "700" /></p>
 
-Read all pokemon from pokebag for battle with some predefined GYM.
+Read all pokemon from player class for battle with some predefined GYM.
 
-Model: Load all pokemon from pokebag and battle one by one until all has HP<=0. Read the chosen skill from the presenter and calculate the damage based on the skill attack. Then random choose a skill for GYM to attack the player. Repeat until one faints then the next pokemon in the list will be loaded. Repeat until no pokemon are left and decide who is the winner.
+Model: Load all pokemon from player class and battle one by one until all has HP<=0. Read the chosen skill from the presenter and calculate the damage based on the skill attack. Then random choose a skill for GYM to attack the player. Repeat until one faints then the next pokemon in the list will be loaded. Repeat until no pokemon are left and decide who is the winner.
 
 View: Display the current pokemon of the player and GYM. Show HP, the history of the fight and also the available skills for the player.
 
@@ -81,7 +81,7 @@ New extra mode for capture class. Adding a mechanism of accumulating of the luck
 
 This is demonstrating the use of static type in class. It can be served as the global parameter.
 
-Model: A static parameter in capture class. To add and verify if the luck parameter is reached >=100 and add the pokemon to pokebag.
+Model: A static parameter in capture class. To add and verify if the luck parameter is reached >=100 and add the pokemon to player class.
 
 View: Extra textblock is added under the capture windows to show the luck.
 
