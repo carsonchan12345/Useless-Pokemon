@@ -5,7 +5,7 @@
 All graphics are searched from the internet. This is just for educational purpose, will not be used for publication.
 
 ### Overview
-
+<p align="center"><img src="./pics/class.png"  /></p> 
 #### Encapsulation
 Every class is designed to work independently and avoid other class to modify the code. In most case, private field is used if the methods or properties are not supposed to be called by other class. 
 
