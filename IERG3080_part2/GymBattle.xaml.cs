@@ -24,6 +24,7 @@ namespace IERG3080_part2
     {
 
         private bool End;
+        private bool playerwin;
         Button[] Skill = new Button[4];
         private Uri PokemonImage;
         public bool Playerturns { get; private set; }
@@ -37,6 +38,7 @@ namespace IERG3080_part2
         {   
             InitializeComponent();
             End = false;
+            playerwin = false;
             playercurrentpokeindex = -1;
             gymcurrentpokeindex = -1;
             Playerturns = true;
@@ -155,6 +157,11 @@ namespace IERG3080_part2
             return End;
         }
 
+        public bool Playerwin()
+        {
+            return playerwin;
+        }
+
         private void PlayerLoadNext()//wrapper
         {
             playercurrentpokeindex += 1;
@@ -182,6 +189,7 @@ namespace IERG3080_part2
             if (gymcurrentpokeindex >= gym.MyPokemon.Count())
             {
                 MessageBox.Show("Gym no pokemon left! You win!");
+                playerwin = true;
                 this.Close();
             }
             else

@@ -22,19 +22,21 @@ namespace IERG3080_part2
     /// </summary>
     public partial class Capture : Window
     {
-        static int Chances = 0;
+        static private int Chances = 0;
         private Uri PokemonImage;
         private Random rnd;
         private int rndint;
         private int id;
         private Pokemon Encounterpoke;
-        public int Result { get; private set; }
+        private bool isend;
+        private bool iscaptured;
         private int Answer;
 
         public Capture(int id)
         {
             InitializeComponent();
-           
+            iscaptured = false;
+            isend = false;
             rnd = new Random();
             this.id = id;
             Loadpokemon();
@@ -73,6 +75,8 @@ namespace IERG3080_part2
             if (rndint == Answer)
             {
                 MessageBox.Show("Your guess is correct! Captured!");
+                isend = true;
+                iscaptured = true;
                 Addpokemon();
                 Addmiscell(100, 100, 1);
             }
@@ -81,9 +85,16 @@ namespace IERG3080_part2
                 MessageBox.Show("Your guess is incorrect! Can't be Captured!");
                 if (Chancescheck())
                 {
+                    isend = true;
+                    iscaptured = true;
                     MessageBox.Show("But you have 100 chances now, you still get it!");
                     Addpokemon();
                     Addmiscell(100, 100, 1);
+                }
+                else
+                {
+                    isend = true;
+                    
                 }
             }
             this.Close();
@@ -119,6 +130,23 @@ namespace IERG3080_part2
             }
             return result;
         }
+        
+        public int Getchances()
+        {
+            return Chances;
+        }
+
+        public bool Isend()
+        {
+            return isend;
+        }
+
+        public bool Iscaptured()
+        {
+            return iscaptured;
+        }
+
+
         private void Gamestart()
         {   
             Loadimage(id);
