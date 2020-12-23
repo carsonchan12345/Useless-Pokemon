@@ -7,7 +7,7 @@ All graphics are searched from the internet. This is just for educational purpos
 ### Overview
 <p align="center"><img src="./pics/class.png"  /></p> 
 
-#### Encapsulation
+#### Encapsulation/ Factory method
 Every class is designed to work independently and avoid other class to modify the code. In most case, private field is used if the methods or properties are not supposed to be called by other class. 
 
 Only necessary informations or methods can be called in other class. E.g. Addpokemon() in player class and Isend() in Capture class.
@@ -128,5 +128,7 @@ View: After click corresponding pokemon, the pokemon information will be display
 Presenter: Player can click on the button to do PoweUp, evolution, sell , rename process. It will update Player class data and update the UI immediately.
 
 ### Challenges overcome
+Merging with different classes is difficult as can't do the testing before. So discussion should be made with groupmate to confirm what parameters will be used before start working. 
 
+Also, need to understand fork, merge, rebase, commit, push, pull, pull request in git and github for the version control. Otherwise, the work of partner may screw up by you.
 
