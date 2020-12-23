@@ -6,6 +6,16 @@ All graphics are searched from the internet. This is just for educational purpos
 
 ### Overview
 
+#### Encapsulation
+Every class is designed to work independently and avoid other class to modify the code. In most case, private field is used if the methods or properties are not supposed to be called by other class. 
+
+Only necessary informations or methods can be called in other class. E.g. Addpokemon() in player class and Isend() in Capture class.
+
+Using public and private field dynamically can ensure the class can still interact with others while providing encapsulation features.
+
+#### Class reuse
+The resuse case mainly in the core part. Some frequently used methods are provided in the core class so that it doesn't need to code everytime from scratch in other classes. E.g. Addpokemon(), Delpokemon().
+Pokemon class can be reuse as the LIST in player class to store the owned pokemon. Also as a individual like in capture class.
 
 ### Model View Presenter
 Every class follows the MVP rules to separate between the logic, view. View responsible for the graphic, the presenter is involved in updating the graphic and the user input, keyboard WASD, and mouse click. Model responsible for the logic of the gameplay, Processing the data. Each level passes the data to other components as in the following picture.
@@ -114,4 +124,6 @@ Model: Get all player information from player class including MyPokemon, money, 
 View: After click corresponding pokemon, the pokemon information will be displayed. The presenter will update the view.
 
 Presenter: Player can click on the button to do PoweUp, evolution, sell , rename process. It will update Player class data and update the UI immediately.
+
+### challenges overcome
 
