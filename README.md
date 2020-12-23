@@ -11,6 +11,22 @@ For updating the view, we try to use some displayxxx method in class for the dis
 
 ### Component
 
+### Major Model
+
+#### Pokemon Class
+
+In a real-world situation, the pokemon list may modify constantly. We decide to create pokemon.xml to make it easily updated and modify. Our pokemon class read pokemon.xml to acquire data.  Below is an example in pokemon.xml.
+
+	<Pokemon Id="1" Name="Bulbasaur" Hp="10" Attack="5" EvolveLv="25" Evolve="Ivysaur" Lv= "5" Cp="77" Type="grass" Height="2.04" Weight="15.2" Skill1="Comet Punch" Skill2="Rage" Skill3="null" Skill4="null" Price="100"></Pokemon>
+	<Pokemon Id="2" Name="Ivysaur" Hp="15" Attack="7" EvolveLv="-1" Evolve="null" Lv= "10" Cp="107" Type="grass" Height="3.03" Weight="28.7" Skill1="Comet Punch" Skill2="null" Skill3="null" Skill4="null" Price="150"></Pokemon>
+ 
+Pokemon class create properties for each above attribute to let our developer easy to implement. For the pokemon evolution, when the pokemon achieve EvolveLv, the pokemon can evolve(Evolve!="null"). The evolution form is the next id of the pokemon.
+
+#### Player Class
+
+For the player class, player class records the player information such as player's pokemon, money, and so on. It uses void AddPokemon to add the pokemon object to the MyPokemon List. Also, the singleton pattern ensures that the entire system only instantiates one object.
+
+
 #### Capture
 
 <p align="center"><img src="./pics/capture.png" width = "500" /></p> 
@@ -96,17 +112,3 @@ View: After click corresponding pokemon, the pokemon information will be display
 
 Presenter: Player can click on the button to do PoweUp, evolution, sell , rename process. It will update Player class data and update the UI immediately.
 
-### Major Model
-
-#### Pokemon Class
-
-In a real-world situation, the pokemon list may modify constantly. We decide to create pokemon.xml to make it easily updated and modify. Our pokemon class read pokemon.xml to acquire data.  Below is an example in pokemon.xml.
-
-	<Pokemon Id="1" Name="Bulbasaur" Hp="10" Attack="5" EvolveLv="25" Evolve="Ivysaur" Lv= "5" Cp="77" Type="grass" Height="2.04" Weight="15.2" Skill1="Comet Punch" Skill2="Rage" Skill3="null" Skill4="null" Price="100"></Pokemon>
-	<Pokemon Id="2" Name="Ivysaur" Hp="15" Attack="7" EvolveLv="-1" Evolve="null" Lv= "10" Cp="107" Type="grass" Height="3.03" Weight="28.7" Skill1="Comet Punch" Skill2="null" Skill3="null" Skill4="null" Price="150"></Pokemon>
- 
-Pokemon class create properties for each above attribute to let our developer easy to implement. For the pokemon evolution, when the pokemon achieve EvolveLv, the pokemon can evolve(Evolve!="null"). The evolution form is the next id of the pokemon.
-
-#### Player Class
-
-For the player class, player class records the player information such as player's pokemon, money, and so on. It uses void AddPokemon to add the pokemon object to the MyPokemon List. Also, the singleton pattern ensures that the entire system only instantiates one object.
