@@ -128,8 +128,8 @@ View: After click corresponding pokemon, the pokemon information will be display
 Presenter: Player can click on the button to do PoweUp, evolution, sell , rename process. It will update Player class data and update the UI immediately.
 
 ### Challenges overcome
-Merging with different classes is difficult as we can't do the global testing. So discussion should be made with groupmate to confirm what parameters will be used before start working. 
+Merging with different classes are difficult as we can't do the global testing. So discussion should be made with groupmate to confirm what parameters will be used before start working. 
 
-Also, need to understand fork, merge, rebase, commit, push, pull, pull request in git and github for the version control. Otherwise, the works of partner may screw up by you.
+Also, need to understand fork, merge, rebase, commit, push, pull, pull request in git and github for the version control. Otherwise, the works of partner may screw up.
 
 Contradiction between the encapsulation and the class reuse. Sometimes we want our class to be encapsulated, so we use private field. But the private field prohibitate inheritance. Maybe use protected field could help?
