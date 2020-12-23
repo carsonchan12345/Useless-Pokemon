@@ -2,7 +2,7 @@
 ## Pokemon
 
 ### Acknowledgement
-All graphic are searched from the internet. This is just for educational purpose, will not be used for publication.
+All graphics are searched from the internet. This is just for educational purpose, will not be used for publication.
 
 ### Overview
 
