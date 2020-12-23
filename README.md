@@ -15,6 +15,7 @@ Using public and private field dynamically can ensure the class can still intera
 
 #### Class reuse
 The resuse case mainly in the core part. Some frequently used methods are provided in the core class so that it doesn't need to code everytime from scratch in other classes. E.g. Addpokemon(), Delpokemon().
+
 Pokemon class can be reuse as the LIST in player class to store the owned pokemon. Also as a individual like in capture class.
 
 ### Model View Presenter
