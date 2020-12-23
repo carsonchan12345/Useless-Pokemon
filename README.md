@@ -127,5 +127,6 @@ View: After click corresponding pokemon, the pokemon information will be display
 
 Presenter: Player can click on the button to do PoweUp, evolution, sell , rename process. It will update Player class data and update the UI immediately.
 
-### challenges overcome
+### Challenges overcome
+
 
