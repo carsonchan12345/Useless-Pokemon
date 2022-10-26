@@ -1,4 +1,4 @@
-# IERG3080_part2
+# Useless-Pokemon
 ## Pokemon
 
 ### Acknowledgement
